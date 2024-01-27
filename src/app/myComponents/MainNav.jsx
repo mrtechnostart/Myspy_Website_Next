@@ -9,10 +9,10 @@ export function MainNav({ className, ...props }) {
       {...props}
     >
       <Link
-        href="/examples/dashboard"
+        href="/"
         className="text-sm font-medium transition-colors hover:text-primary"
       >
-        Overview
+        Home
       </Link>
     </nav>
   );

@@ -11,7 +11,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 
-export function UserNav() {
+export function UserNav({ data }) {
+  const { emailId, name } = data;
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -25,17 +26,17 @@ export function UserNav() {
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">
-              Madhusudhan Pathak
-            </p>
+            <p className="text-sm font-medium leading-none">{name}</p>
             <p className="text-xs leading-none text-muted-foreground">
-              admin@technostart.in
+              {emailId}
             </p>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>Settings</DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/dashboard">Settings</Link>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>

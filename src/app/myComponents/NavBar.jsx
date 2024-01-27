@@ -4,8 +4,10 @@ import { MainNav } from "./MainNav";
 import { UserNav } from "./UserNav";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ModeToggle } from "./DarkMode";
 export default function NavBar() {
   const { data, status } = useSession();
+
   console.log(data, status);
   return (
     <div className="border-b">
@@ -13,12 +15,13 @@ export default function NavBar() {
         <MainNav className="mx-6" />
         <div className="ml-auto flex items-center space-x-4">
           {status === "authenticated" ? (
-            <UserNav />
+            <UserNav data={data.user} />
           ) : (
             <Button variant="outline" asChild>
               <Link href="/api/auth/signin">Login</Link>
             </Button>
           )}
+          <ModeToggle />
         </div>
       </div>
     </div>
