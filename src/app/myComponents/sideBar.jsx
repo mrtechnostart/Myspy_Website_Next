@@ -1,144 +1,66 @@
 "use client";
-import {
-  AlertCircle,
-  Archive,
-  ArchiveX,
-  File,
-  Inbox,
-  MessagesSquare,
-  Search,
-  Send,
-  ShoppingCart,
-  Trash2,
-  Users2,
-} from "lucide-react";
-import * as React from "react";
-import { cn } from "@/lib/utils";
-import { Input } from "@/components/ui/input";
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable";
-import { Separator } from "@/components/ui/separator";
-import { Nav } from "./Nav";
 
-export function Sidebar({
-  defaultLayout = [265, 440, 655],
-  defaultCollapsed = false,
-  navCollapsedSize,
-}) {
-  const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed);
+import { ResizablePanel } from "@/components/ui/resizable";
+import { useState } from "react";
+import { IoPersonAddSharp } from "react-icons/io5";
+import { GrProjects } from "react-icons/gr";
+import { IoMailSharp } from "react-icons/io5";
+import AddPersona from "./AddPersona";
+import AddProject from "./AddProject";
+import Mails from "./Mails";
 
+export default function SideBar({ updateComponent }) {
+  const SideBarData = [
+    {
+      Text: "Persona",
+      Icon: <IoPersonAddSharp />,
+      Component: <AddPersona />,
+    },
+    {
+      Text: "Projects",
+      Icon: <GrProjects />,
+      Component: <AddProject />,
+    },
+    {
+      Text: "Mails",
+      Icon: <IoMailSharp />,
+      Component: <Mails />,
+    },
+  ];
+  const [sideBarSize, setSideBarSize] = useState(10);
+  const handleResize = (event) => {
+    setSideBarSize(() => {
+      return event;
+    });
+    console.log(sideBarSize);
+  };
   return (
-    <ResizablePanelGroup
-      direction="horizontal"
-      onLayout={(sizes) => {
-        document.cookie = `react-resizable-panels:layout=${JSON.stringify(
-          sizes
-        )}`;
-      }}
-      className="h-full max-h-[800px] items-stretch"
+    <ResizablePanel
+      collapsible
+      minSize={3}
+      maxSize={10}
+      onResize={handleResize}
     >
-      <ResizablePanel
-        defaultSize={defaultLayout[0]}
-        collapsedSize={navCollapsedSize}
-        collapsible={true}
-        minSize={15}
-        maxSize={20}
-        onCollapse={(collapsed) => {
-          setIsCollapsed(collapsed);
-          document.cookie = `react-resizable-panels:collapsed=${JSON.stringify(
-            collapsed
-          )}`;
-        }}
-        className={cn(
-          isCollapsed && "min-w-[50px] transition-all duration-300 ease-in-out"
-        )}
-      >
-        <Nav
-          isCollapsed={isCollapsed}
-          links={[
-            {
-              title: "Inbox",
-              label: "128",
-              icon: Inbox,
-              variant: "default",
-            },
-            {
-              title: "Drafts",
-              label: "9",
-              icon: File,
-              variant: "ghost",
-            },
-            {
-              title: "Sent",
-              label: "",
-              icon: Send,
-              variant: "ghost",
-            },
-            {
-              title: "Junk",
-              label: "23",
-              icon: ArchiveX,
-              variant: "ghost",
-            },
-            {
-              title: "Trash",
-              label: "",
-              icon: Trash2,
-              variant: "ghost",
-            },
-            {
-              title: "Archive",
-              label: "",
-              icon: Archive,
-              variant: "ghost",
-            },
-          ]}
-        />
-        <Separator />
-        <Nav
-          isCollapsed={isCollapsed}
-          links={[
-            {
-              title: "Social",
-              label: "972",
-              icon: Users2,
-              variant: "ghost",
-            },
-            {
-              title: "Updates",
-              label: "342",
-              icon: AlertCircle,
-              variant: "ghost",
-            },
-            {
-              title: "Forums",
-              label: "128",
-              icon: MessagesSquare,
-              variant: "ghost",
-            },
-            {
-              title: "Shopping",
-              label: "8",
-              icon: ShoppingCart,
-              variant: "ghost",
-            },
-            {
-              title: "Promotions",
-              label: "21",
-              icon: Archive,
-              variant: "ghost",
-            },
-          ]}
-        />
-      </ResizablePanel>
-      <ResizableHandle withHandle />
-      <ResizablePanel
-        defaultSize={defaultLayout[1]}
-        minSize={30}
-      ></ResizablePanel>
-    </ResizablePanelGroup>
+      <>
+        {SideBarData.map((element, index) => {
+          return (
+            <div
+              className="flex items-center leading-7 text-xl justify-center border-t-2 border-b-2 py-2 "
+              key={index}
+              onClick={() => updateComponent(element.Component)}
+            >
+              {sideBarSize > 4 ? (
+                <>
+                  <div className="mr-2">{element.Icon}</div>
+                  {element.Text}
+                </>
+              ) : (
+                <>{element.Icon}</>
+              )}
+            </div>
+          );
+        })}
+      </>
+    </ResizablePanel>
   );
 }
