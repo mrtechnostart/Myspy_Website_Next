@@ -22,10 +22,16 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useDebounce } from "@/lib/useDebounce";
 
 function DialogDemo({ data, updater }) {
   const [persona, setPersona] = useState(data.persona);
+  const [exist, setExist] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [debounced, setDebounced] = useState(true);
+  const debouncedSearch = useDebounce(persona, setDebounced);
   async function handleSubmit() {
+    setLoading(true);
     try {
       const response = await axios.patch("/api/persona", {
         id: data.id,
@@ -42,8 +48,16 @@ function DialogDemo({ data, updater }) {
       console.log(response);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   }
+  useEffect(() => {
+    (async () => {
+      const response = await axios.post("/api/custom", { persona: persona });
+      setExist(response.data.value);
+    })();
+  }, [debouncedSearch]);
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -70,7 +84,11 @@ function DialogDemo({ data, updater }) {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit" onClick={handleSubmit}>
+          <Button
+            type="submit"
+            onClick={handleSubmit}
+            disabled={loading || exist || debounced}
+          >
             Save changes
           </Button>
         </DialogFooter>
