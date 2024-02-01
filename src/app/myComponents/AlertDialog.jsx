@@ -10,12 +10,20 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
 
-export default function AlertDialogCustom({ Name }) {
+export default function AlertDialogCustom({
+  Name,
+  variant,
+  id,
+  deletehandler,
+}) {
   return (
     <>
       <AlertDialog>
-        <AlertDialogTrigger>{Name}</AlertDialogTrigger>
+        <AlertDialogTrigger>
+          <Button variant={variant}>{Name}</Button>
+        </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
@@ -26,7 +34,12 @@ export default function AlertDialogCustom({ Name }) {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction>Continue</AlertDialogAction>
+            <AlertDialogAction
+              onClick={() => deletehandler(id)}
+              variant="destructive"
+            >
+              Continue
+            </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

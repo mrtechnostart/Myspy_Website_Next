@@ -1,12 +1,5 @@
 "use client";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -15,27 +8,100 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { IoIosArrowDropdownCircle } from "react-icons/io";
+import AlertDialogCustom from "./AlertDialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-function DropDown() {
+function DialogDemo({ data, updater }) {
+  const [persona, setPersona] = useState(data.persona);
+  async function handleSubmit() {
+    try {
+      const response = await axios.patch("/api/persona", {
+        id: data.id,
+        persona: persona,
+      });
+      updater((prev) => {
+        return prev.map((element) => {
+          if (element.id === data.id) {
+            return { ...element, persona: persona };
+          }
+          return element;
+        });
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
-    <>
-      <DropdownMenu>
-        <DropdownMenuTrigger>
-          <IoIosArrowDropdownCircle size={30} />
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>Perform Actions</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>Edit</DropdownMenuItem>
-          <DropdownMenuItem>Delete</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Edit</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="grid gap-4 py-4">
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="name" className="text-right">
+              Persona
+            </Label>
+            <Input
+              id="name"
+              value={persona}
+              onChange={(e) => setPersona(e.target.value)}
+              className="col-span-3"
+            />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button type="submit" onClick={handleSubmit}>
+            Save changes
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }
 export default function ViewPersona() {
-  const PersonaData = ["Madhusudhan Pathak", "MYSPY", "Captain X"];
+  const [PersonaData, setPersonaData] = useState([
+    { persona: "Fetching", id: "1" },
+  ]);
+
+  async function handleDelete(id) {
+    const newData = PersonaData.filter((element) => element.id !== id);
+    setPersonaData(newData);
+    try {
+      const response = await axios.delete(`/api/persona?id=${id}`);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get("/api/persona");
+
+      setPersonaData(response.data.data);
+    })();
+  }, []);
+
   return (
     <>
       <div className="w-2/3 mx-auto flex justify-center">
@@ -50,11 +116,17 @@ export default function ViewPersona() {
           <TableBody>
             {PersonaData.map((element, index) => {
               return (
-                <TableRow key={index}>
+                <TableRow key={element.id}>
                   <TableCell className="font-medium">{index + 1}</TableCell>
-                  <TableCell>{element}</TableCell>
-                  <TableCell className="text-right">
-                    <DropDown />
+                  <TableCell>{element.persona}</TableCell>
+                  <TableCell className=" flex justify-end space-x-3 items-center">
+                    <DialogDemo data={element} updater={setPersonaData} />
+                    <AlertDialogCustom
+                      Name="Delete"
+                      variant="destructive"
+                      id={element.id}
+                      deletehandler={handleDelete}
+                    />
                   </TableCell>
                 </TableRow>
               );
