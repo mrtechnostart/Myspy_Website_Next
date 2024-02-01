@@ -24,3 +24,45 @@ export async function POST(req) {
     return NextResponse.json({ error: error }, { status: 500 });
   }
 }
+
+export async function GET() {
+  try {
+    const userId = "clrvlg2l7000011xgzxatl3o0"; // Replace with the actual user ID you want to query
+
+    // Find the user with the specified ID
+    const user = await prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+      include: {
+        persona: {
+          include: {
+            project: true,
+          },
+        },
+      },
+    });
+
+    // Extract and format the desired information
+    const userProjectsData = user.persona.reduce((result, persona) => {
+      persona.project.forEach((project) => {
+        result.push({
+          persona: persona.persona,
+          projectName: project.projectName,
+          minDesc: project.minDesc,
+          desc: project.desc,
+          hrefto: project.hrefto,
+        });
+      });
+      return result;
+    }, []);
+
+    return NextResponse.json(
+      { data: JSON.parse(JSON.stringify(userProjectsData, null, 2)) },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.log("Error retrieving user data:", error);
+    return NextResponse.json({ error: error }, { status: 500 });
+  }
+}
