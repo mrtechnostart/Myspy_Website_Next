@@ -59,6 +59,10 @@ export default function AddPersona() {
             onChange={(e) => addPersona(e.target.value)}
             placeholder="Persona Here:"
           />
+          {debounced || persona === "" || !exist ? null : (
+            <p className="mt-3 text-red-600">Already Exists!</p>
+          )}
+
           <Button
             type="submit"
             className="my-3"
