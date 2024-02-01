@@ -1,5 +1,5 @@
 "use client";
-
+import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -12,28 +12,54 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 export default function AddProject() {
-  const personas = [
-    {
-      persona: "Captain X",
-    },
-    { persona: "Madhusudhan Pathak" },
-    { persona: "Dove" },
-    { persona: "MYSPY" },
-    { persona: "Maneshwar" },
-  ];
+  const [personas, setPersonas] = useState([{ persona: "Fetching..." }]);
+  const { toast } = useToast();
+  const [isLoading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
+    personaId: "",
     persona: "MYSPY",
     projectName: "",
     minDesc: "",
     desc: "",
-    hrefTo: "",
+    hrefto: "",
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    try {
+      setLoading(true);
+      const { persona, ...newData } = formData;
+      const response = await axios.post("/api/project", newData);
+      if (response.statusText === "OK") {
+        toast({
+          description: "Successfull ✅",
+        });
+      }
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+      toast({
+        description: "Failed ❌",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+    console.log();
   };
+  async function getPersonas() {
+    try {
+      const response = await axios.get("/api/persona");
+      setPersonas(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    getPersonas();
+  }, []);
   return (
     <>
       <div className="flex flex-col items-center justify-center mb-10 w-2/3 lg:w-1/3 mx-auto mt-10">
@@ -49,7 +75,16 @@ export default function AddProject() {
         <form onSubmit={handleSubmit}>
           <div className="space-y-3">
             <Select
-              onValueChange={(e) => setFormData({ ...formData, persona: e })}
+              onValueChange={(e) => {
+                const selectedPerson = personas.find(
+                  (element) => element.persona === e
+                );
+                setFormData({
+                  ...formData,
+                  persona: e,
+                  personaId: selectedPerson.id,
+                });
+              }}
               defaultValue={formData.persona}
             >
               <SelectTrigger className="w-[200px]">
@@ -99,15 +134,20 @@ export default function AddProject() {
             />
             <Input
               type="text"
-              name="hrefTo"
-              id="hrefTo"
-              value={formData.hrefTo}
+              name="hrefto"
+              id="hrefto"
+              value={formData.hrefto}
               onChange={(e) =>
-                setFormData({ ...formData, hrefTo: e.target.value })
+                setFormData({ ...formData, hrefto: e.target.value })
               }
               placeholder="Link of Project: "
             />
-            <Button type="submit" className="my-3" variant="outline">
+            <Button
+              type="submit"
+              className="my-3"
+              variant="outline"
+              disabled={isLoading}
+            >
               Add Now
             </Button>
           </div>

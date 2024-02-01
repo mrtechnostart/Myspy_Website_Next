@@ -1,13 +1,32 @@
 "use client";
-
+import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import axios from "axios";
 import { useState } from "react";
 export default function AddPersona() {
   const [persona, addPersona] = useState("");
+  const { toast } = useToast();
+  const [isLoading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
-    console.log(persona);
+    try {
+      const response = await axios.post("/api/persona", {
+        persona: persona,
+      });
+      console.log(response);
+      if (response.statusText === "OK") {
+        console.log("OK");
+        toast({
+          description: "Successfull ✅",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <>
@@ -30,7 +49,12 @@ export default function AddPersona() {
             onChange={(e) => addPersona(e.target.value)}
             placeholder="Persona Here:"
           />
-          <Button type="submit" className="my-3" variant="outline">
+          <Button
+            type="submit"
+            className="my-3"
+            variant="outline"
+            disabled={isLoading}
+          >
             Add Now
           </Button>
         </form>
