@@ -20,7 +20,7 @@ export default function AddProject() {
   const [isLoading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     personaId: "",
-    persona: "MYSPY",
+    persona: "",
     projectName: "",
     minDesc: "",
     desc: "",

@@ -3,10 +3,14 @@ import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDebounce } from "@/lib/useDebounce";
 export default function AddPersona() {
   const [persona, addPersona] = useState("");
+  const [exist, setExist] = useState(false);
   const { toast } = useToast();
+  const [debounced, setDebounced] = useState(true);
+  const debouncedSearch = useDebounce(persona, setDebounced);
   const [isLoading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     setLoading(true);
@@ -28,6 +32,12 @@ export default function AddPersona() {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    (async () => {
+      const response = await axios.post("/api/custom", { persona: persona });
+      setExist(response.data.value);
+    })();
+  }, [debouncedSearch]);
   return (
     <>
       <div className="flex flex-col items-center justify-center mb-10 w-2/3  lg:w-1/3 mx-auto mt-10 ">
@@ -53,7 +63,7 @@ export default function AddPersona() {
             type="submit"
             className="my-3"
             variant="outline"
-            disabled={isLoading}
+            disabled={isLoading || exist || debounced}
           >
             Add Now
           </Button>

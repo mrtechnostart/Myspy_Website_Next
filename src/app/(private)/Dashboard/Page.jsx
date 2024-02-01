@@ -19,9 +19,6 @@ export default function Page() {
         <ResizableHandle withHandle />
         <ResizablePanel className="min-h-[90vh]">
           {CurrentComponent}
-          {/* <ViewPersona />
-          <AddProject />
-          <ViewProjects /> */}
         </ResizablePanel>
       </ResizablePanelGroup>
     </>
