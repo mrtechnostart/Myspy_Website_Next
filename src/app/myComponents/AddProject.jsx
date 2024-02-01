@@ -36,7 +36,7 @@ export default function AddProject() {
   };
   return (
     <>
-      <div className="flex flex-col items-center justify-center mb-10 w-2/3 lg:w-1/3 mx-auto mt-10 md:mt-0">
+      <div className="flex flex-col items-center justify-center mb-10 w-2/3 lg:w-1/3 mx-auto mt-10">
         <h2 className="scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight first:mt-0 ">
           Add More Projects
         </h2>
