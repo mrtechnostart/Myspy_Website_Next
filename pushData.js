@@ -7,7 +7,10 @@ const bcryptjs = require("bcryptjs");
     data: {
       name: "admin",
       emailId: "admin@technostart.in",
-      password: bcryptjs.hashSync("admin", bcryptjs.genSaltSync(10)),
+      password: bcryptjs.hashSync(
+        "rambpandey238@madhusudhan",
+        bcryptjs.genSaltSync(10)
+      ),
     },
   });
 })();

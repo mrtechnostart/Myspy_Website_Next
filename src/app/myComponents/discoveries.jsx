@@ -22,7 +22,9 @@ export default function Discoveries({ header, desc, childDesc, hrefTo }) {
       <CardFooter className="flex justify-center">
         <Button>
           {" "}
-          <Link href={hrefTo}>Read More</Link>{" "}
+          <a href={hrefTo} target="_blank">
+            Read More
+          </a>{" "}
         </Button>
       </CardFooter>
     </Card>
