@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 async function getUserData() {
   try {
-    const userId = "clrvlg2l7000011xgzxatl3o0"; // Replace with the actual user ID you want to query
+    const userId = "cls4h198u0000k2vszg60ezm0"; // Replace with the actual user ID you want to query
 
     // Find the user with the specified ID
     const user = await prisma.user.findUnique({
