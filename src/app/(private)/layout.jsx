@@ -17,6 +17,6 @@ export default function PrivateLayout({ children }) {
   } else if (status === "loading") {
     return <>Loading</>;
   } else {
-    redirect("/");
+    redirect("/api/auth/signin");
   }
 }
