@@ -9,7 +9,9 @@ export default function Section() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/api/custom");
+        const response = await axios.get(
+          "https://raw.githubusercontent.com/mrtechnostart/Myspy_Backend/main/data.json"
+        );
         setData(response.data.data);
       } catch (error) {
         console.error("Error fetching data:", error);
