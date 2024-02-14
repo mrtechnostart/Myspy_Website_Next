@@ -70,15 +70,9 @@ export async function POST(req) {
 
 export async function GET() {
   try {
-    if (process.env.NODE_ENV !== "development") {
-      const data = await axios.get(process.env.GITHUB_URL);
-      const finalData = data.data.data;
-      return NextResponse.json({ data: finalData }, { status: 200 });
-    } else {
-      console.log("Local Data is sent");
-      return NextResponse.json({ data: mockServerData.data }, { status: 200 });
-    }
+    console.log("Local Data is sent");
+    return NextResponse.json({ data: mockServerData.data }, { status: 200 });
   } catch (error) {
-    // console.log(error);
+    return NextResponse.json({ data: error }, { status: 500 });
   }
 }
