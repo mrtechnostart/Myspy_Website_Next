@@ -1,7 +1,8 @@
 import prisma from "@/lib/prisma";
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
-
+import axios from "axios";
+import { data as mockServerData } from "@/app/staticData/data";
 export async function POST(req) {
   try {
     const token = await getToken({ req: req });
@@ -25,44 +26,59 @@ export async function POST(req) {
   }
 }
 
+// export async function GET() {
+//   try {
+//     const userId = "cls4h198u0000k2vszg60ezm0"; // Replace with the actual user ID you want to query
+
+//     // Find the user with the specified ID
+//     const user = await prisma.user.findUnique({
+//       where: {
+//         id: userId,
+//       },
+//       include: {
+//         persona: {
+//           include: {
+//             project: true,
+//           },
+//         },
+//       },
+//     });
+
+//     // Extract and format the desired information
+//     const userProjectsData = user.persona.reduce((result, persona) => {
+//       persona.project.forEach((project) => {
+//         result.push({
+//           persona: persona.persona,
+//           projectName: project.projectName,
+//           minDesc: project.minDesc,
+//           desc: project.desc,
+//           hrefto: project.hrefto,
+//         });
+//       });
+//       return result;
+//     }, []);
+
+//     return NextResponse.json(
+//       { data: JSON.parse(JSON.stringify(userProjectsData, null, 2)) },
+//       { status: 200 }
+//     );
+//   } catch (error) {
+//     console.log("Error retrieving user data:", error);
+//     return NextResponse.json({ error: error }, { status: 500 });
+//   }
+// }
+
 export async function GET() {
   try {
-    const userId = "cls4h198u0000k2vszg60ezm0"; // Replace with the actual user ID you want to query
-
-    // Find the user with the specified ID
-    const user = await prisma.user.findUnique({
-      where: {
-        id: userId,
-      },
-      include: {
-        persona: {
-          include: {
-            project: true,
-          },
-        },
-      },
-    });
-
-    // Extract and format the desired information
-    const userProjectsData = user.persona.reduce((result, persona) => {
-      persona.project.forEach((project) => {
-        result.push({
-          persona: persona.persona,
-          projectName: project.projectName,
-          minDesc: project.minDesc,
-          desc: project.desc,
-          hrefto: project.hrefto,
-        });
-      });
-      return result;
-    }, []);
-
-    return NextResponse.json(
-      { data: JSON.parse(JSON.stringify(userProjectsData, null, 2)) },
-      { status: 200 }
-    );
+    if (process.env.NODE_ENV !== "development") {
+      const data = await axios.get(process.env.GITHUB_URL);
+      const finalData = data.data.data;
+      return NextResponse.json({ data: finalData }, { status: 200 });
+    } else {
+      console.log("Local Data is sent");
+      return NextResponse.json({ data: mockServerData.data }, { status: 200 });
+    }
   } catch (error) {
-    console.log("Error retrieving user data:", error);
-    return NextResponse.json({ error: error }, { status: 500 });
+    // console.log(error);
   }
 }
