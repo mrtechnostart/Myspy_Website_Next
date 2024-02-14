@@ -14,6 +14,12 @@ export function MainNav({ className, ...props }) {
       >
         Home
       </Link>
+      <Link
+        href="/"
+        className="text-sm font-medium transition-colors hover:text-primary"
+      >
+        Discussion
+      </Link>
     </nav>
   );
 }

@@ -1,10 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
-import { MainNav } from "./MainNav";
-import { UserNav } from "./UserNav";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { ModeToggle } from "./DarkMode";
+import { MainNav } from "./MainNav";
 export default function NavBar() {
   const { data, status } = useSession();
 
