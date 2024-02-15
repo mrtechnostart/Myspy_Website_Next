@@ -17,9 +17,6 @@ export default function Footer() {
               <li>
                 <Link href={"/contact"}>Contact US</Link>
               </li>
-              <li>
-                <Link href={"/terms"}>Terms & Condition</Link>
-              </li>
             </ul>
           </div>
           <div className="flex justify-center space-x-4 mt-4 lg:mt-0">

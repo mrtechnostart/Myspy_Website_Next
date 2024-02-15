@@ -13,11 +13,11 @@ export default function Discoveries({ header, desc, childDesc, hrefTo }) {
     <Card className="max-w-md min-h-10">
       <CardHeader className="text-center">
         <CardTitle className="text-lg lg:text-2xl">{header}</CardTitle>
-        <CardDescription>{desc}</CardDescription>
-      </CardHeader>
-      <CardContent className="items-center">
+        <CardContent className="items-center">
         <p className="leading-7 [&:not(:first-child)]:mt-6">{childDesc}</p>
       </CardContent>
+        <CardDescription>{desc}</CardDescription>
+      </CardHeader>
       <CardFooter className="flex justify-center">
         <Button>
           {" "}
