@@ -1,6 +1,6 @@
 {
   "data": [
-    {"_comment": "Myspy's Section"},
+    { "_comment": "Myspy's Section" },
     {
       "persona": "Myspy",
       "projectName": "CQE - Computed Quantum Existence",
@@ -37,10 +37,7 @@
       "hrefto": "https://dhnz.short.gy/gmp"
     },
 
-
-
-
-    {"_comment": "Madhusudhan's Section"},
+    { "_comment": "Madhusudhan's Section" },
     {
       "persona": "Madhusudhan Pathak",
       "projectName": "FDE - Feynman Diagram of Enlightenment",
@@ -49,38 +46,30 @@
       "hrefto": "https://dhnz.short.gy/fde"
     },
 
-
-
-    {"_comment": "Captain X's Section"},
+    { "_comment": "Captain X's Section" },
     {
       "persona": "Captain X",
       "projectName": "TPS - The Persona System",
-      "minDesc": "Sep,Oct 2016 - Aug,Sep 2020",
-      "desc": "A basic description of how I have divided my whole Self and Existence into five parts: Myspy, Madhusudhan Pathak, Maneswar, Captain X, and Nicof. Each persona represents a different aspect, and I use them to interact with the world. I believe that this system helps me to be a more well-rounded and balanced individual.",
+      "desc": "Sep,Oct 2016 - Aug,Sep 2020",
+      "minDesc": "A basic description of how I have divided my whole Self and Existence into five parts: Myspy, Madhusudhan Pathak, Maneswar, Captain X, and Nicof. Each persona represents a different aspect, and I use them to interact with the world. I believe that this system helps me to be a more well-rounded and balanced individual.",
       "hrefto": "https://dhnz.short.gy/tps"
     },
 
-
-
-
-    {"_comment": "Maneswar's Section"},
+    { "_comment": "Maneswar's Section" },
     {
       "persona": "Maneswar",
       "projectName": "STT - The Static Time Theory",
-      "minDesc": "Mid 2017 - Nov,Dec 2018",
-      "desc": "The Static Time Theory proposes that time is still, while the universe moves through time in a higher dimension called hyperspace, this explains phenomena like the universe's origin, black, white holes and Uneven Matter-Antimatter Distribution. Time's stillness means an object's speed through time depends inversely on its mass. The universe's motion through hyperspace caused its formation, with the Big Bang being the start of this motion, not an explosion. Black holes are seen as rips in spacetime, allowing objects to enter hyperspace, while white holes let them return. The universe's expansion is linked to its motion in hyperspace; faster movement means more expansion. While still under development, the Static Time Theory offers a unique perspective on time and the universe.",
+      "desc": "Mid 2017 - Nov,Dec 2018",
+      "minDesc": "The Static Time Theory proposes that time is still, while the universe moves through time in a higher dimension called hyperspace, this explains phenomena like the universe's origin, black, white holes and Uneven Matter-Antimatter Distribution. Time's stillness means an object's speed through time depends inversely on its mass. The universe's motion through hyperspace caused its formation, with the Big Bang being the start of this motion, not an explosion. Black holes are seen as rips in spacetime, allowing objects to enter hyperspace, while white holes let them return. The universe's expansion is linked to its motion in hyperspace; faster movement means more expansion. While still under development, the Static Time Theory offers a unique perspective on time and the universe.",
       "hrefto": "https://dhnz.short.gy/stt"
     },
 
-
-
-
-    {"_comment": "Nicof Section"},
+    { "_comment": "Nicof Section" },
     {
       "persona": "Nicof",
       "projectName": "DIE - Duh I'm Enlightened",
-      "minDesc": "Not Started",
-      "desc": "I have written bunch of jokes specific from the sprituality and enlightenment point of view. I am basically trying to write a stand-up special where I want to put out the comical and humorous aspects of being 'Enlightened', offering a unique take on Religion, Meditation, and Humanity as Civilisation. Although good amount of jokes are collected, I need to weave them in coherent narration.",
+      "desc": "Not Started",
+      "minDesc": "I have written bunch of jokes specific from the sprituality and enlightenment point of view. I am basically trying to write a stand-up special where I want to put out the comical and humorous aspects of being 'Enlightened', offering a unique take on Religion, Meditation, and Humanity as Civilisation. Although good amount of jokes are collected, I need to weave them in coherent narration.",
       "hrefto": "/"
     }
   ]
