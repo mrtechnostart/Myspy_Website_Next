@@ -6,11 +6,11 @@ export default function Hero() {
       <div className="flex h-screen mx-20">
         <div className="flex h-80 items-center">
           <div className="flex flex-col">
-            <div className="flex flex-row">
-              <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl flex-1">
+            <div className="flex flex-col md:flex-row">
+              <h1 className="scroll-m-20  md:flex-row text-4xl font-extrabold tracking-tight lg:text-5xl flex-1">
                 Hey there, it{"'s"}
               </h1>
-              <h1 className="ml-3 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ">
+              <h1 className="ml-0 md:ml-3 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ">
                 <Typewriter
                   options={{
                     strings: [
