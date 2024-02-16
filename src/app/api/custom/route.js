@@ -71,7 +71,10 @@ export async function POST(req) {
 export async function GET() {
   try {
     console.log("Local Data is sent");
-    return NextResponse.json({ data: mockServerData.data }, { status: 200 });
+    const filteredData = mockServerData.data.filter((element) => {
+      return !Object.keys(element).includes("_comment");
+    });
+    return NextResponse.json({ data: filteredData }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ data: error }, { status: 500 });
   }
