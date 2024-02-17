@@ -29,6 +29,7 @@ export default function Hero() {
 
             <p className="leading-7 [&:not(:first-child)]:mt-6">
               Divided by Personas, United by Purpose.
+              Keep Calm, Website is Under Construction.
             </p>
           </div>
         </div>

@@ -17,8 +17,8 @@ export default function Discoveries({ header, desc, childDesc, hrefTo }) {
         <CardTitle className="text-lg lg:text-2xl">{header}</CardTitle>
         <CardDescription>{desc}</CardDescription>
         <CardContent className="items-center">
-          <p className="leading-7 [&:not(:first-child)]:mt-6">
-            {childDesc.slice(0, 100) + "..."}
+          <p className="text-center leading-1 [&:not(:first-child)]:mt-6">
+            {childDesc.slice(0, 280) + "..."}
           </p>
           <ReadMoreBox variant="text" header={header} childDesc={childDesc} />
         </CardContent>
@@ -27,7 +27,7 @@ export default function Discoveries({ header, desc, childDesc, hrefTo }) {
         <Button>
           {" "}
           <a href={hrefTo} target="_blank">
-            Download Now!
+            Still Curious.!?
           </a>{" "}
         </Button>
       </CardFooter>
