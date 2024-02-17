@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import AlertDialogCustom from "./AlertDialog";
 import ReadMoreBox from "./ReadMoreBox";
 
 export default function Discoveries({ header, desc, childDesc, hrefTo }) {
