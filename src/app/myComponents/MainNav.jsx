@@ -11,15 +11,22 @@ export function MainNav({ className, ...props }) {
       <Link
         href="/"
         className="text-sm font-medium transition-colors hover:text-primary"
-      >
-        Home
+      > Home
       </Link>
+
       <Link
-        href="/"
+        href="https://dhnz.short.gy/discussion"
         className="text-sm font-medium transition-colors hover:text-primary"
-      >
-        Discussion
+      > Discussion Topics
       </Link>
+
+      <Link
+        href="https://dhnz.short.gy/about"
+        className="text-sm font-medium transition-colors hover:text-primary"
+      > About & Contact Me
+      </Link>
+
+      
     </nav>
   );
 }

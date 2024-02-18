@@ -17,7 +17,7 @@ export default function ReadMoreBox({ variant, header, childDesc }) {
     <>
       <AlertDialog>
         <AlertDialogTrigger>
-          <Button variant={variant}>Read More</Button>
+          <Button variant={variant}>Continue Reading</Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -25,7 +25,7 @@ export default function ReadMoreBox({ variant, header, childDesc }) {
             <AlertDialogDescription>{childDesc}</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>Back</AlertDialogCancel>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
