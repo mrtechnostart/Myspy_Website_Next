@@ -4,18 +4,34 @@ import Image from "next/image";
 import backgroudDark from "../../../public/Dark.jpg";
 import backgroudLight from "../../../public/Light.jpg";
 import Typewriter from "typewriter-effect";
+import { useEffect, useState } from "react";
 export default function Hero() {
   const { theme } = useTheme();
+
+  const [currentWidth, setCurrentWidth] = useState(0);
+  useEffect(() => {
+    const handleResize = () => {
+      setCurrentWidth(window.outerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    setCurrentWidth(window.outerWidth);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
-      <div className="-z-10 absolute w-full">
-        <Image
-          src={theme === "light" ? backgroudLight : backgroudDark}
-          className="h-[90vh] bg-cover opacity-50"
-        />
-      </div>
+      {currentWidth > 770 && (
+        <div className="-z-10 absolute w-full">
+          <Image
+            src={theme === "light" ? backgroudLight : backgroudDark}
+            className="h-[90vh] bg-cover opacity-50"
+          />
+        </div>
+      )}
+
       <div
-        className={`flex flex-col h-screen items-center text-center justify-center my-36`}
+        className={`flex flex-col h-screen items-center text-center justify-center my-0 md:my-36`}
       >
         <div className="flex h-40 items-end mb-0">
           <div className="flex flex-col md:flex-row">
@@ -42,7 +58,7 @@ export default function Hero() {
         <p className="text-3xl italic font-serif font-">
           Divided by Personas, United by Purpose.
         </p>
-        <p className="mt-3 text-center text-wrap mx-52">
+        <p className="mt-3 text-center text-wrap mx-12 md:mx-52">
           Keep Calm, Website is Under Construction. I have logically organised{" "}
           {`"myself"`} into Five Specific seta of traits and skills, mainly for
           self-management and efficiency. All of my Work/Creations are
