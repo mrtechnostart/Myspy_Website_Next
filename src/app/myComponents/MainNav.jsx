@@ -17,16 +17,22 @@ export function MainNav({ className, ...props }) {
       <Link
         href="https://dhnz.short.gy/discussion"
         className="text-sm font-medium transition-colors hover:text-primary"
-      > Discussion Topics
+      > For Discussion
       </Link>
 
       <Link
         href="https://dhnz.short.gy/about"
         className="text-sm font-medium transition-colors hover:text-primary"
-      > About & Contact Me
+      > Who am I?
       </Link>
 
+      <Link
+        href="https://dhnz.short.gy/connect"
+        className="text-sm font-medium transition-colors hover:text-primary"
+      > Wanna Connect?
+      </Link>
       
+
     </nav>
   );
 }

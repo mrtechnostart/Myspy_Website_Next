@@ -25,7 +25,7 @@ export default function ReadMoreBox({ variant, header, childDesc }) {
             <AlertDialogDescription>{childDesc}</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Back</AlertDialogCancel>
+            <AlertDialogCancel>Go Back</AlertDialogCancel>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
