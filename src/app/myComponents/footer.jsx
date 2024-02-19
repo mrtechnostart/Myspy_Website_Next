@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -12,30 +11,19 @@ export default function Footer() {
                 <Link href={"/"}>Home</Link>
               </li>
               <li>
-                <Link href={"/about"}>About</Link>
+                <Link href={"https://dhnz.short.gy/discussion"}>For Discussion</Link>
               </li>
               <li>
-                <Link href={"/contact"}>Contact US</Link>
+                <Link href={"https://dhnz.short.gy/about"}>Who am I?</Link>
+              </li>
+              <li>
+                <Link href={"https://dhnz.short.gy/connect"}>Wanna Connect?</Link>
               </li>
             </ul>
           </div>
-          <div className="flex justify-center space-x-4 mt-4 lg:mt-0">
-            <Link href={""}>
-              <FaFacebook />
-            </Link>
-            <Link href={""}>
-              <FaTwitter />
-            </Link>
-            <Link href={""}>
-              <FaInstagram />
-            </Link>
-            <Link href={""}>
-              <FaLinkedin />
-            </Link>
-          </div>
         </div>
         <div className="pb-2">
-          <p className="text-center">Get in touch for wisdom 😊</p>
+          <p className="text-center font-serif font-semibold">Get in touch for wisdom 😊</p>
         </div>
       </footer>
     </>
