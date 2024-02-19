@@ -58,7 +58,7 @@ export default function Hero() {
         <p className="text-3xl italic font-serif font-">
           Divided by Personas, United by Purpose.
         </p>
-        <p className="mt-3 text-center text-wrap mx-12 md:mx-52">
+        <p className="mt-3 text-center text-wrap mx-12 md:mx-52 ">
           Keep Calm, Website is Under Construction. I have logically organised{" "}
           {`"myself"`} into Five Specific seta of traits and skills, mainly for
           self-management and efficiency. All of my Work/Creations are
