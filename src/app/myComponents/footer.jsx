@@ -17,6 +17,9 @@ export default function Footer() {
                 <Link href={"https://dhnz.short.gy/about"}>Who am I?</Link>
               </li>
               <li>
+                <Link href={"https://dhnz.short.gy/zeal"}>Zany Zeal</Link>
+              </li>
+              <li>
                 <Link href={"https://dhnz.short.gy/connect"}>Wanna Connect?</Link>
               </li>
             </ul>
