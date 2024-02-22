@@ -60,7 +60,7 @@ export default function Hero() {
         </p>
         <p className="mt-3 text-center text-wrap mx-12 md:mx-52 ">
           Keep Calm, Website is Under Construction. I have logically organised{" "}
-          {`"myself"`} into Five Specific seta of traits and skills, mainly for
+          {`"myself"`} into Five Specific sets of traits and skills, mainly for
           self-management and efficiency. All of my Work/Creations are
           categorised accordingly {"(aka Persona-Wise)"}.
         </p>
