@@ -27,6 +27,12 @@ export function MainNav({ className, ...props }) {
       </Link>
 
       <Link
+        href="https://dhnz.short.gy/zeal"
+        className="text-sm font-medium transition-colors hover:text-primary"
+      > Zany Zeal
+      </Link>      
+
+      <Link
         href="https://dhnz.short.gy/connect"
         className="text-sm font-medium transition-colors hover:text-primary"
       > Wanna Connect?
