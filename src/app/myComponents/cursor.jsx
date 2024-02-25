@@ -14,6 +14,5 @@ export default function Cursor() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  console.log(currentWidth);
   return <>{currentWidth > 700 && <AnimatedCursor />}</>;
 }
