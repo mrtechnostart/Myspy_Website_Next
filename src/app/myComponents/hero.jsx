@@ -26,6 +26,7 @@ export default function Hero() {
           <Image
             src={theme === "light" ? backgroudLight : backgroudDark}
             className="h-[90vh] bg-cover opacity-50"
+            alt="backgroundImage"
           />
         </div>
       )}
@@ -36,7 +37,7 @@ export default function Hero() {
         <div className="flex h-40 items-end mb-0">
           <div className="flex flex-col md:flex-row">
             <h1 className="scroll-m-20 md:flex-row text-4xl font-extrabold tracking-tight lg:text-5xl flex-1 font-serif">
-            Hey there, it{"'s"}
+              Hey there, it{"'s"}
             </h1>
             <h1 className="ml-0 md:ml-3 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl font-serif">
               <Typewriter
