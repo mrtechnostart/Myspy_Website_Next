@@ -30,6 +30,7 @@ export function MainNav({ className, ...props }) {
             For Discussion
           </Link>
           <Link
+            target="_blank"
             href="https://dhnz.short.gy/about"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
@@ -37,6 +38,7 @@ export function MainNav({ className, ...props }) {
             Who am I?
           </Link>
           <Link
+            target="_blank"
             href="https://dhnz.short.gy/zeal"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
@@ -44,10 +46,11 @@ export function MainNav({ className, ...props }) {
             Zany Zeal
           </Link>
           <Link
+            target="_blank"
             href="https://dhnz.short.gy/connect"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
-            {" "}
+            {""}
             Wanna Connect?
           </Link>
         </>

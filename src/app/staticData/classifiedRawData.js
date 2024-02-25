@@ -1,4 +1,4 @@
-import { Facebook, Linkedin } from "lucide-react";
+import { Facebook, Linkedin, Instagram, Github, Twitter, Youtube } from "lucide-react";
 
 export const PersonaData = {
   Myspy: {
@@ -8,7 +8,7 @@ export const PersonaData = {
         desc: "May,Sep,Oct 2021 - March,Sep,Oct 2023 - Current",
         minDesc:
           "After DSW, I am trying to formulate some Algorithms that can be used to get functionalities of Wisdom and could be helpful for AI Alignment. Emphasising on more Implmentable approaches while focusing on specific elements from the Second Half of DSW.",
-        hrefto: "/",
+        hrefto: "https://dhnz.short.gy/connect",
       },
       {
         header: "DSW - Data Structure of Wisdom",
@@ -47,8 +47,11 @@ export const PersonaData = {
       },
     ],
     socials: [
-      { Link: "Social1", Icon: <Linkedin /> },
-      { Link: "Social2", Icon: <Facebook /> },
+      { Link: "https://youtube.com/@artificially.conscious", Icon: <Youtube /> },
+      { Link: "https://www.instagram.com/artificially.conscious", Icon: <Instagram /> },
+      { Link: "https://www.linkedin.com/in/madmyspy", Icon: <Linkedin /> },
+      { Link: "https://github.com/MadhusudhanPathak", Icon: <Github /> },
+      { Link: "https://twitter.com/MadMyspy", Icon: <Twitter /> },
     ],
   },
   "Madhusudhan Pathak": {
@@ -83,8 +86,8 @@ export const PersonaData = {
       },
     ],
     socials: [
-      { Link: "Social1", Icon: <Linkedin /> },
-      { Link: "Social2", Icon: <Facebook /> },
+      { Link: "https://youtube.com/@enlightened.demon.", Icon: <Youtube /> },
+      { Link: "https://www.instagram.com/enlightened.demon", Icon: <Instagram /> },
     ],
   },
   "Captain X": {
@@ -112,8 +115,9 @@ export const PersonaData = {
       },
     ],
     socials: [
-      { Link: "Social1", Icon: <Linkedin /> },
-      { Link: "Social2", Icon: <Facebook /> },
+      { Link: "https://youtube.com/@_.captainx._", Icon: <Youtube /> },
+      { Link: "https://www.instagram.com/_.captainx._", Icon: <Instagram /> },
+      { Link: "https://www.facebook.com/akamyspy", Icon: <Facebook /> },
     ],
   },
   Maneswar: {
@@ -134,8 +138,8 @@ export const PersonaData = {
       },
     ],
     socials: [
-      { Link: "Social1", Icon: <Linkedin /> },
-      { Link: "Social2", Icon: <Facebook /> },
+      { Link: "https://youtube.com/@intellect.moron.", Icon: <Youtube /> },
+      { Link: "https://www.instagram.com/intellect.moron", Icon: <Instagram /> },
     ],
   },
   Nicof: {
@@ -145,12 +149,12 @@ export const PersonaData = {
         desc: "Not Started",
         minDesc:
           "I have written bunch of jokes specific from the sprituality and enlightenment point of view. I am basically trying to write a stand-up special where I want to put out the comical and humorous aspects of being 'Enlightened', offering a unique take on Religion, Meditation, and Humanity as Civilisation. Although good amount of jokes are collected, I need to weave them in coherent narration.",
-        hrefto: "/",
+        hrefto: "https://dhnz.short.gy/connect",
       },
     ],
     socials: [
-      { Link: "Social1", Icon: <Linkedin /> },
-      { Link: "Social2", Icon: <Facebook /> },
+      { Link: "https://youtube.com/@usefully.useless", Icon: <Youtube /> },
+      { Link: "https://www.instagram.com/usefully.useless", Icon: <Instagram /> },
     ],
   },
 };
