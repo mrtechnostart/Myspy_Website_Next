@@ -1,3 +1,5 @@
+import { Facebook, Linkedin } from "lucide-react";
+
 export const PersonaData = {
   Myspy: {
     discoveries: [
@@ -45,8 +47,8 @@ export const PersonaData = {
       },
     ],
     socials: [
-      { Link: "Social1", Icon: "IconComponent1" },
-      { Link: "Social2", Icon: "IconComponent2" },
+      { Link: "Social1", Icon: <Linkedin /> },
+      { Link: "Social2", Icon: <Facebook /> },
     ],
   },
   "Madhusudhan Pathak": {
@@ -81,8 +83,8 @@ export const PersonaData = {
       },
     ],
     socials: [
-      { Link: "Social1", Icon: "IconComponent1" },
-      { Link: "Social2", Icon: "IconComponent2" },
+      { Link: "Social1", Icon: <Linkedin /> },
+      { Link: "Social2", Icon: <Facebook /> },
     ],
   },
   "Captain X": {
@@ -110,8 +112,8 @@ export const PersonaData = {
       },
     ],
     socials: [
-      { Link: "Social1", Icon: "IconComponent1" },
-      { Link: "Social2", Icon: "IconComponent2" },
+      { Link: "Social1", Icon: <Linkedin /> },
+      { Link: "Social2", Icon: <Facebook /> },
     ],
   },
   Maneswar: {
@@ -132,8 +134,8 @@ export const PersonaData = {
       },
     ],
     socials: [
-      { Link: "Social1", Icon: "IconComponent1" },
-      { Link: "Social2", Icon: "IconComponent2" },
+      { Link: "Social1", Icon: <Linkedin /> },
+      { Link: "Social2", Icon: <Facebook /> },
     ],
   },
   Nicof: {
@@ -147,8 +149,8 @@ export const PersonaData = {
       },
     ],
     socials: [
-      { Link: "Social1", Icon: "IconComponent1" },
-      { Link: "Social2", Icon: "IconComponent2" },
+      { Link: "Social1", Icon: <Linkedin /> },
+      { Link: "Social2", Icon: <Facebook /> },
     ],
   },
 };
