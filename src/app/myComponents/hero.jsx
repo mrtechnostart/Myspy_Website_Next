@@ -32,7 +32,7 @@ export default function Hero() {
       )}
 
       <div
-        className={`flex flex-col h-screen items-center text-center justify-center my-0 md:my-36`}
+        className={`flex flex-col h-[89vh] items-center text-center justify-center md:justify-end`}
       >
         <div className="flex h-40 items-end mb-0">
           <div className="flex flex-col md:flex-row">
