@@ -1,8 +1,6 @@
 import prisma from "@/lib/prisma";
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
-import axios from "axios";
-import { data as mockServerData } from "@/app/staticData/data";
 export async function POST(req) {
   try {
     const token = await getToken({ req: req });
@@ -67,15 +65,3 @@ export async function POST(req) {
 //     return NextResponse.json({ error: error }, { status: 500 });
 //   }
 // }
-
-export async function GET() {
-  try {
-    console.log("Local Data is sent");
-    const filteredData = mockServerData.data.filter((element) => {
-      return !Object.keys(element).includes("_comment");
-    });
-    return NextResponse.json({ data: filteredData }, { status: 200 });
-  } catch (error) {
-    return NextResponse.json({ data: error }, { status: 500 });
-  }
-}
