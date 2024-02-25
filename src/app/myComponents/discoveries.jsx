@@ -13,7 +13,9 @@ export default function Discoveries({ header, desc, childDesc, hrefTo }) {
   return (
     <Card className="max-w-md min-h-10">
       <CardHeader className="text-center">
-        <CardTitle className="text-lg lg:text-2xl font-serif">{header}</CardTitle>
+        <CardTitle className="text-lg lg:text-2xl font-serif">
+          {header}
+        </CardTitle>
         <CardDescription>{desc}</CardDescription>
         <CardContent className="items-center">
           <p className="text-center leading-1 [&:not(:first-child)]:mt-6">

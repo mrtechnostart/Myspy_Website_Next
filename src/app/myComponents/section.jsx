@@ -36,6 +36,9 @@ export default function Section() {
               </div>
             ))}
           </div>
+          {index < Object.keys(PersonaData).length - 1 && (
+            <hr className="w-1/3 mx-auto mt-6 border rounded-3xl" />
+          )}
         </div>
       ))}
     </div>
