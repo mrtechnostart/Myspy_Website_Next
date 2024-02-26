@@ -11,7 +11,7 @@ import ReadMoreBox from "./ReadMoreBox";
 
 export default function Discoveries({ header, desc, childDesc, hrefto }) {
   return (
-    <Card className="max-w-md min-h-10">
+    <Card className="max-w-md min-h-80">
       <CardHeader className="text-center">
         <CardTitle className="text-lg lg:text-2xl font-serif">
           {header}

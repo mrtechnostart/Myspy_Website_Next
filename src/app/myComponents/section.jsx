@@ -16,7 +16,7 @@ export default function Section() {
             <div className="flex space-x-3">
               {PersonaData[persona]["socials"].map((element, index) => {
                 return (
-                  <Link key={index} href={element.Link}>
+                  <Link key={index} href={element.Link} target="_blank">
                     {element.Icon}
                   </Link>
                 );
