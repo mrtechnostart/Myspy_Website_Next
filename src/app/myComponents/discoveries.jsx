@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import ReadMoreBox from "./ReadMoreBox";
 
-export default function Discoveries({ header, desc, childDesc, hrefTo }) {
+export default function Discoveries({ header, desc, childDesc, hrefto }) {
   return (
     <Card className="max-w-md min-h-10">
       <CardHeader className="text-center">
@@ -27,7 +27,7 @@ export default function Discoveries({ header, desc, childDesc, hrefTo }) {
       <CardFooter className="flex justify-center">
         <Button>
           {" "}
-          <a href={hrefTo} target="_blank">
+          <a href={hrefto} target="_blank">
             Still Curious.!?
           </a>{" "}
         </Button>

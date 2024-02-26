@@ -31,7 +31,7 @@ export default function Section() {
                   header={element.header}
                   desc={element.desc}
                   childDesc={element.minDesc}
-                  hrefTo={element.hrefTo}
+                  hrefto={element.hrefto}
                 />
               </div>
             ))}
