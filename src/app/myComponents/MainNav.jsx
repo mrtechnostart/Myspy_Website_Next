@@ -11,13 +11,13 @@ export function MainNav({ className, ...props }) {
       className={cn("flex items-center space-x-4 lg:space-x-6", className)}
       {...props}
     >
-      <Link
+      {/* <Link
         href="/"
         className="text-sm font-medium transition-colors hover:text-primary"
       >
         {" "}
         Home
-      </Link>
+      </Link> */}
       {currentWidth > 700 && (
         <>
           {" "}
@@ -27,7 +27,7 @@ export function MainNav({ className, ...props }) {
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             {" "}
-            For Discussion
+            For Discussion.
           </Link>
           <Link
             target="_blank"
@@ -43,7 +43,7 @@ export function MainNav({ className, ...props }) {
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             {" "}
-            Zany Zeal
+            Zany Zeal!
           </Link>
           <Link
             target="_blank"
