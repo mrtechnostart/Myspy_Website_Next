@@ -9,30 +9,23 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center">
             <ul className="flex flex-col space-x-0 space-y-4 md:space-y-0 md:flex-row items-center md:space-x-4">
               <li>
-                <Link href={"/"}>Home</Link>
+                <Link href={"https://dhnz.short.gy/zeal"}>Zanny Zeal</Link>
               </li>
               <li>
-                <Link href={"https://dhnz.short.gy/discussion"}>
-                  For Discussion
-                </Link>
+                <Link href={"https://dhnz.short.gy/about"}>Who am I</Link>
               </li>
               <li>
-                <Link href={"https://dhnz.short.gy/about"}>Who am I?</Link>
+                <Link href={"https://dhnz.short.gy/discussion"}>For Discussion</Link>
               </li>
               <li>
-                <Link href={"https://dhnz.short.gy/zeal"}>Zany Zeal</Link>
-              </li>
-              <li>
-                <Link href={"https://dhnz.short.gy/connect"}>
-                  Wanna Connect?
-                </Link>
+                <Link href={"https://dhnz.short.gy/connect"}>Wanna Connect</Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="pb-2 pt-3 md:pt-0">
           <p className="text-center font-serif font-semibold">
-            Get in touch for wisdom 😊
+            Get in touch for Wisdom 😊
           </p>
         </div>
       </footer>

@@ -23,11 +23,11 @@ export function MainNav({ className, ...props }) {
           {" "}
           <Link
             target="_blank"
-            href="https://dhnz.short.gy/discussion"
+            href="https://dhnz.short.gy/zeal"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             {" "}
-            For Discussion.
+            Zanny Zeal
           </Link>
           <Link
             target="_blank"
@@ -35,15 +35,15 @@ export function MainNav({ className, ...props }) {
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             {" "}
-            Who am I?
+            Who am I
           </Link>
           <Link
             target="_blank"
-            href="https://dhnz.short.gy/zeal"
+            href="https://dhnz.short.gy/discussion"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             {" "}
-            Zany Zeal!
+            For Discussion
           </Link>
           <Link
             target="_blank"
@@ -51,7 +51,7 @@ export function MainNav({ className, ...props }) {
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             {""}
-            Wanna Connect?
+            Wanna Connect
           </Link>
         </>
       )}
