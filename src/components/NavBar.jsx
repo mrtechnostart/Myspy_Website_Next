@@ -1,17 +1,17 @@
 import { ModeToggle } from "@/app/myComponents/DarkMode"
 import { Button } from "@/components/ui/button"
-import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
-import { MenuIcon, MountainIcon } from "lucide-react"
-import Link  from 'next/link'
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { MenuIcon } from "lucide-react"
+import Link from 'next/link'
 
 export default function Navbar(){
     return(
-        <header className="sticky top-0 z-50 w-full bg-white shadow-sm dark:bg-gray-950 dark:text-gray-50">
+        <header className="w-full bg-white shadow-sm dark:bg-black dark:text-gray-50">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link className="flex items-center gap-2" href="#">
             <span className="text-lg font-bold hidden md:block">Madhusudhan Pathak</span>
           </Link>
-          <nav className="hidden space-x-4 lg:flex">
+          <nav className="hidden space-x-4 lg:flex lg:items-center">
           <Link
             target="_blank"
             href="https://dhnz.short.gy/zeal"
@@ -44,7 +44,7 @@ export default function Navbar(){
             {""}
             Wanna Connect
           </Link>
-          
+          <ModeToggle />
           </nav>
           <Sheet>
             <SheetTrigger asChild>
