@@ -1,14 +1,14 @@
 import Section from "./myComponents/section";
 // import Mailing from "./myComponents/mailing";
-import Hero from "./myComponents/hero";
-import Footer from "./myComponents/footer";
+import Navbar from "@/components/NavBar";
 import Cursor from "./myComponents/cursor";
-import NavBar from "./myComponents/NavBar";
+import Footer from "./myComponents/footer";
+import Hero from "./myComponents/hero";
 
 export default function Home() {
   return (
     <>
-      <NavBar />
+      <Navbar/>
       <Cursor />
       <Hero />
       <Section />
