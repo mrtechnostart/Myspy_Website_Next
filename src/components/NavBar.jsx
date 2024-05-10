@@ -44,6 +44,14 @@ export default function Navbar(){
             {""}
             Wanna Connect
           </Link>
+          <Link
+            target="_blank"
+            href="https://dhnz.short.gy/wisdom"
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
+            {""}
+            What's Wisdom
+          </Link>
           <ModeToggle />
           </nav>
           <Sheet>
